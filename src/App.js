@@ -1,17 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Header from "./Component/Header";
-import NavBar from "./Component/NavBar";
-import Profile from "./Component/Profile";
+import {BrowserRouter, Route} from "react-router-dom";
+import s from './App.css';
+import Header from "./Component/Header/Header";
+import NavBar from "./Component/NavBar/NavBar";
+import Profile from "./Component/Profile/Profile";
+import Dialogs from "./Component/Dialog/Dialogs";
+import Music from "./Component/Music/Music";
+import News from "./Component/News/News";
+import Settings from "./Component/Settings/Settings";
 
-const App = () => {
+
+const App = (props) => {
+
+
     return (
-        <div className="app-wrapper">
-            <Header/>
-            <NavBar/>
-            <Profile/>
-        </div>
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
+                <NavBar/>
+                <div className="app-wrapper-content">
+                    {/*<Route path='/profile' component={Profile}/>*/}
+                    {/*<Route path='/dialogs' component={Dialogs}/>*/}
+                    <Route path='/profile' render={() => <Profile postssData={props.postssData}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs/>}/>
+                    <Route path='/music' component={Music}/>
+                    <Route path='/news' component={News}/>
+                    <Route path='/settings' component={Settings}/>
+                </div>
+            </div>
+        </BrowserRouter>
     );
 }
 

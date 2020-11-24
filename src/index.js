@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+let postssData = [
+    {id: "1", message: "user1", likesCont: 1},
+    {id: "2", message: "user2", likesCont: 2},
+    {id: "3", message: "user3", likesCont: 3},
+    {id: "4", message: "user4", likesCont: 4}
+];
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App postssData={postssData}/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
