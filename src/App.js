@@ -8,6 +8,7 @@ import Dialogs from "./Component/Dialog/Dialogs";
 import Music from "./Component/Music/Music";
 import News from "./Component/News/News";
 import Settings from "./Component/Settings/Settings";
+import state from "./redux/state";
 
 
 const App = (props) => {
@@ -18,8 +19,8 @@ const App = (props) => {
                 <Header/>
                 <NavBar/>
                 <div className="app-wrapper-content">
-                    <Route path='/profile' render={() => <Profile postssData={props.postssData}/>}/>
-                    <Route path='/dialogs' render={() => <Dialogs dialogData={props.dialogData} messagesData={props.messagesData}/>}/>
+                    <Route path='/profile' render={() => <Profile postssData={props.state.profilePage}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogsPage}/>}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/news' component={News}/>
                     <Route path='/settings' component={Settings}/>

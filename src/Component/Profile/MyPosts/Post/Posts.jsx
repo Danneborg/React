@@ -7,7 +7,7 @@ const Posts = (props) => {
 
     console.log(props.postData);
 
-    let postsElements = props.postData.map( post =><SinglePost message={post.message} likeCount={post.likesCont}/>);
+    let postsElements = props.postData.profileData.map( post =><SinglePost message={post.message} likeCount={post.likesCont}/>);
 
     return (
         <div className={c.postsBlock}>
