@@ -26,8 +26,17 @@ let state = {
             {id: "3", message: "user3"},
             {id: "4", message: "user4"}
         ]
-    }
+    },
 
+    sideBar :{
+
+        topFriends:[
+            {name:"Friend1"},
+            {name:"Friend2"},
+            {name:"Friend3"},
+        ]
+
+    }
 }
 
 export default state;
